@@ -1,0 +1,22 @@
+.env
+.DS_Store
+node_modules/
+public/
+npm-debug.log
+yarn-error.log
+config/database.json
+config/settings.json
+storage/
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+.env
+docker-compose.yml
+
+.tmp
+
