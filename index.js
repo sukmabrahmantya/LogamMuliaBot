@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const currency = require('currency.js');
 const TelegramBot = require('node-telegram-bot-api');
-const token = process.env.TOKEN;
+const token = '2050529872:AAEKQzgJfq1T6qk9PtqdHwFMHJepSFPvy-g';
 const bot = new TelegramBot(token, {polling: true});
 
 
@@ -12,9 +12,9 @@ const data = {
   hargaSebelumnya: '',
   perubahanHarga: ''
 }
-let sendingData = '--------------------------------------\n                     Update Harga\n--------------------------------------\n';
+let sendingData = 'Update Harga\n\n';
 
-async function main() {
+async function getPrice() {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -50,7 +50,7 @@ async function main() {
 // TELEGRAM BOT
 bot.onText(/\/cekharga/, async (msg) => {
   const chatId = msg.chat.id;
-  sendingData = '--------------------------------------\n                     Update Harga\n--------------------------------------\n'
-  await main();
+  sendingData = 'Update Harga\n\n'
+  await getPrice();
   bot.sendMessage(chatId, sendingData)
 });

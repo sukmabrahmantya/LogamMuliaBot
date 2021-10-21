@@ -13,11 +13,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
     "currency.js": "^2.0.4",
-    "node-schedule": "^2.0.0",
     "node-telegram-bot-api": "^0.54.0",
     "puppeteer": "^10.4.0"
-  },
-  "devDependencies": {
-    "dotenv": "^10.0.0"
   }
 }
